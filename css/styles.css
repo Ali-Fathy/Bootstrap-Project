@@ -97,13 +97,22 @@ body {
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
+  transition: background-color 0.5s ease, color 0.3s ease;
   color: var(--bs-body-color);
   text-align: var(--bs-body-text-align);
   background-color: var(--bs-body-bg);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+.form-switch .form-check-input {
+  cursor: pointer;
+  background-color: var(--bs-body-bg);
+  border-color: var(--bs-border-color);
+}
 
+.form-switch .form-check-input:checked {
+  background-color: var(--bs-primary);
+}
 hr {
   margin: 1rem 0;
   color: inherit;

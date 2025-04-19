@@ -1,7 +1,17 @@
-/*!
-* Start Bootstrap - Business Frontpage v5.0.9 (https://startbootstrap.com/template/business-frontpage)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-business-frontpage/blob/master/LICENSE)
-*/
-// This file is intentionally blank
-// Use this file to add JavaScript to your project
+document.addEventListener("DOMContentLoaded", function () {
+  const darkModeSwitch = document.getElementById("darkModeSwitch");
+  const htmlElement = document.documentElement;
+
+  // Initialize from localStorage
+  const savedTheme = localStorage.getItem("theme") || "light";
+  if (savedTheme === "dark") {
+    darkModeSwitch.checked = true;
+    htmlElement.setAttribute("data-bs-theme", "dark");
+  }
+
+  darkModeSwitch.addEventListener("change", function () {
+    const newTheme = this.checked ? "dark" : "light";
+    htmlElement.setAttribute("data-bs-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
+  });
+});
